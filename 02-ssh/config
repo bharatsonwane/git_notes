@@ -1,9 +1,5 @@
-Host bharatsonwane github.com
-    HostName github.com
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/id_ed25519_bharatsonwane
 
-Host manepoojad github.com
-    HostName github.com
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/id_ed25519_manepoojad
+Host github.com-manepoojad
+     HostName github.com
+     User git
+     IdentityFile ~/.ssh/id_ed25519_manepoojad

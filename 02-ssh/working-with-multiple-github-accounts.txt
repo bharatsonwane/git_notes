@@ -1,0 +1,34 @@
+
+A) create SSH Key value pair
+1. step-1
+    syntax ==> ssh-keygen -t ed25519 -C "your_email@example.com"
+    e.g.   ==> ssh-keygen -t ed25519 -C "bharatrsonwane@gmail.com"
+2. step-2 ==> file in which to save the key ==>  id_ed25519_gitHubUserName is fileName
+    syntax ==> pathName ==> C:\Users\DELL/.ssh/id_ed25519_gitHubUserName
+    e.g.   ==>              C:\Users\DELL/.ssh/id_ed25519_bharatsonwane
+3. step-3 ==> Enter passphrase ==> empty
+
+B) add key in config ==> see in config file
+1. step-1 ==> 
+    syntax ==> 
+    Host github.com:gitHubUserName
+    HostName github.com
+    IdentityFile ~/.ssh/id_ed25519_fileName
+
+    e.g. ==>
+    Host github.com:bharatsonwane
+    HostName github.com
+    IdentityFile ~/.ssh/id_ed25519_bharatsonwane
+
+C) add to SSH AGENT
+1. Open powershell as administrator & run following command
+    Get-Service ssh-agent | Set-Service -StartupType Automatic
+    Start-Service ssh-agent
+    Get-Service ssh-agent
+2. Add SSH keys to SSH Agent
+    syntax ==> ssh-add pathName ==> ssh-add C:\Users\DELL/.ssh/id_ed25519_gitHubUserName
+    e.g.                            ssh-add C:\Users\DELL/.ssh/id_ed25519_bharatsonwane
+
+D) add key github.com
+1. step-1 ==>
+    Go to settings => SSH key ==> add SSH key which is PUB file.
