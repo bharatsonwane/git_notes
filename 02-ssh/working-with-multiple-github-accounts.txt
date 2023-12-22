@@ -14,14 +14,14 @@ B) add key in config ==> see in config file
     Host github.com-gitHubUserName
         HostName github.com
         PreferredAuthentications publickey
-        IdentityFile ~/.ssh/id_ed25519_bharatsonwane
+        IdentityFile ~/.ssh/id_ed25519_gitHubUserName
 
     e.g. ==>
     # git user 1 config
     Host github.com-bharatsonwane
         HostName github.com
         PreferredAuthentications publickey
-        IdentityFile ~/.ssh/id_ed25519_gitHubUserName
+        IdentityFile ~/.ssh/id_ed25519_bharatsonwane
 
 C) add to SSH AGENT
 1. Open powershell as administrator & run following command
