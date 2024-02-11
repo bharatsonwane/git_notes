@@ -4,8 +4,8 @@ A) create SSH Key value pair
     syntax ==> ssh-keygen -t ed25519 -C "your_email@example.com"
     e.g.   ==> ssh-keygen -t ed25519 -C "bharatrsonwane@gmail.com"
 2. step-2 ==> file in which to save the key ==>  id_ed25519_gitHubUserName is fileName
-    syntax ==> pathName ==> C:\Users\DELL/.ssh/id_ed25519_gitHubUserName
-    e.g.   ==>              C:\Users\DELL/.ssh/id_ed25519_bharatsonwane
+    syntax ==> pathName ==> C:\Users\desktopUsername/.ssh/id_ed25519_gitHubUserName
+    e.g.   ==>              C:\Users\sonwanebr/.ssh/id_ed25519_bharatsonwane
 3. step-3 ==> Enter passphrase ==> empty
 
 B) add key in config ==> see in config file
@@ -30,8 +30,8 @@ C) add to SSH AGENT
     Get-Service ssh-agent
     ssh -o StrictHostKeyChecking=no git@github.com
 2. Add SSH keys to SSH Agent
-    syntax ==> ssh-add pathName ==> ssh-add C:\Users\DELL/.ssh/id_ed25519_gitHubUserName
-    e.g.                            ssh-add C:\Users\DELL/.ssh/id_ed25519_bharatsonwane
+    syntax ==> ssh-add pathName ==> ssh-add C:\Users\desktopUsername/.ssh/id_ed25519_gitHubUserName
+    e.g.                            ssh-add C:\Users\sonwanebr/.ssh/id_ed25519_bharatsonwane
 
 D) add key github.com
 1. step-1 ==>
