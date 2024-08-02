@@ -1,15 +1,15 @@
 
-A) create SSH Key value pair
-1. step-1
+1) create SSH Key value pair
+a. step-1
     syntax ==> ssh-keygen -t ed25519 -C "your_email@example.com"
     e.g.   ==> ssh-keygen -t ed25519 -C "bharatrsonwane@gmail.com"
-2. step-2 ==> file in which to save the key ==>  id_ed25519_gitHubUserName is fileName
+b. step-2 ==> file in which to save the key ==>  id_ed25519_gitHubUserName is fileName
     syntax ==> pathName ==> C:\Users\desktopUsername/.ssh/id_ed25519_gitHubUserName
     e.g.   ==>              C:\Users\sonwanebr/.ssh/id_ed25519_bharatsonwane
-3. step-3 ==> Enter passphrase ==> empty
+c. step-3 ==> Enter passphrase ==> empty
 
-B) add key in config ==> see in config file
-1. step-1 ==> 
+2) add key in config ==> see in config file
+a. step-1 ==> 
     syntax ==> 
     Host github.com-gitHubUserName
         HostName github.com
@@ -23,20 +23,20 @@ B) add key in config ==> see in config file
         PreferredAuthentications publickey
         IdentityFile ~/.ssh/id_ed25519_bharatsonwane
 
-C) add to SSH AGENT
-1. Open powershell as administrator & run following command
+3) add to SSH AGENT
+a. Open powershell as administrator & run following command
     Get-Service ssh-agent | Set-Service -StartupType Automatic
     Start-Service ssh-agent
     Get-Service ssh-agent
     ssh -o StrictHostKeyChecking=no git@github.com
-2. Add SSH keys to SSH Agent
+b. Add SSH keys to SSH Agent
     syntax ==> ssh-add pathName ==> ssh-add C:\Users\desktopUsername/.ssh/id_ed25519_gitHubUserName
     e.g.                            ssh-add C:\Users\sonwanebr/.ssh/id_ed25519_bharatsonwane
 
-D) add key github.com
-1. step-1 ==>
+4) add key github.com
+a. step-1 ==>
     Go to settings => SSH key ==> add SSH key which is PUB file.
 
-E) clone repo
-1. syntax: git clone git@github.com-{your-username}:{owner-user-name}/{the-repo-name}.git
+5) clone repo
+a. syntax: git clone git@github.com-{your-username}:{owner-user-name}/{the-repo-name}.git
     e.g.   git clone git@github.com-bharatsonwane:bharatsonwane/layout-float-flexbox-form-js.git
