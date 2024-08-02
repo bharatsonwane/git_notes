@@ -201,5 +201,13 @@ Now you can use:
      git pull
 ```
 
-> P.S: <br> If this gist has been helpful to you, kindly consider leaving a star. 
->   <br>   If you'd like, let's connect on [LinkedIn](https://www.linkedin.com/in/bharatarity) and build a supportive community together.
+## Step 6
+### Change Remote URL for Cloned Repositories
+
+If you have already cloned repositories using HTTPS, you can change the remote URL to use SSH for a smoother experience. First, navigate to the repository directory, then run the following commands to update the remote URL:
+
+```git
+     git remote -v # To check current URLs
+     git remote remove origin # Remove existed URLs
+     git remote add origin git@github.com-{githubUsername}:{owner-user-name}/{the-repo-name}.git # Add SSH URL        
+```
