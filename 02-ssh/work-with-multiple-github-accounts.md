@@ -1,3 +1,5 @@
+### Git Notes
+
 # How To Work With Multiple Github Accounts on a single Machine
 
 Let suppose I have two github accounts, **https:/<span></span>/github.com<span></span>/bharatOffice** and **https:/<span></span>/github.com<span></span>/bharatPersonal**. Now i want to setup my mac to easily talk to both the github accounts.
