@@ -1,11 +1,11 @@
-# git user 1 config
-Host github.com-bharatsonwane
-    HostName github.com
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/id_ed25519_bharatsonwane
-
-# git user 2 config
-Host github.com-manepoojad
+#bharatOffice account
+Host github.com-bharatOffice
      HostName github.com
-     PreferredAuthentications publickey
-     IdentityFile ~/.ssh/id_ed25519_manepoojad
+     User git
+     IdentityFile ~/.ssh/bharatOffice
+     
+#bharatPersonal account
+Host github.com-bharatPersonal
+     HostName github.com
+     User git
+     IdentityFile ~/.ssh/bharatPersonal
