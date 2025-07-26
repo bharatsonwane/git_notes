@@ -9,14 +9,14 @@ Let suppose I have two github accounts, **https:/<span></span>/github.com<span><
 The setup can be done in 5 easy steps:
 ## Steps:
 - [Step 1](#step-1) : Create SSH keys for all accounts
-- [Step 2](#step-2) : Add SSH keys to SSH Agent
-- [Step 3](#step-4) : Create a Config File and Make Host Entries
-- [Step 4](#step-3) : Add SSH public key to the Github
+- [Step 2](#step-2) : Create a Config File and Make Host Entries
+- [Step 3](#step-3) : Add SSH keys to SSH Agent
+- [Step 4](#step-4) : Add SSH public key to the Github
 - [Step 5](#step-5) : Cloning GitHub repositories using different accounts
 
 <br>
 
-## Step 1
+## Step 1:- Create SSH keys for all accounts
 
 First make sure your current directory is your **.ssh** folder (navigate to the .ssh directory).
 ```sh
@@ -69,8 +69,7 @@ After entering the command the terminal will ask for passphrase, leave it empty 
 
 <br>
 
-## Step 2
-### Create a Config File and Make Host Entries
+## Step 2:- Create a Config File and Make Host Entries
 
 The **~/.ssh/config** file allows us specify many config options for SSH.
 
@@ -108,8 +107,7 @@ Now we need to add these lines to the file, each block corresponding to each acc
 
 <br>
 
-## Step 3
-### Add SSH keys to SSH Agent
+## Step 3:- Add SSH keys to SSH Agent
 #### Start SSH Agent
 Run PowerShell as Administrator and execute:
 ```sh
@@ -136,8 +134,7 @@ You can read more about adding keys to SSH Agent [here.](https://help.github.com
 
 <br>
 
-## Step 4
-### Add SSH public key to the Github
+## Step 4:- Add SSH public key to the Github
 For the next step we need to add our public key (that we have generated in our previous step) and add it to corresponding github accounts.
 
 For doing this we need to:
@@ -175,8 +172,7 @@ ___OR___
 <br>
 
 
-## Step 5
-### Cloning GitHub repositories using different accounts
+## Step 5:- Cloning GitHub repositories using different accounts
 
 So we are done with our setups and now its time to see it in action. We will clone a repository using one of the account we have added.
 
@@ -223,8 +219,7 @@ Now you can use:
      git pull
 ```
 
-## Step 6
-### Change Remote URL for Cloned Repositories
+## Step 6:- Change Remote URL for Cloned Repositories
 
 If you have already cloned repositories using HTTPS, you can change the remote URL to use SSH for a smoother experience. First, navigate to the repository directory, then run the following commands to update the remote URL:
 
