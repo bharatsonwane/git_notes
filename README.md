@@ -42,7 +42,7 @@ list down file in  **.ssh** folder (mac/linux):
 
 Syntax for generating unique ssh key for an account with email & file name:
 ```sh
-    $ ssh-keygen -t rsa -C "yourEmailAddress" -f "githubUsername"
+      ssh-keygen -t rsa -C "yourEmailAddress" -f "githubUsername"
 ```
 here,
 
