@@ -3,7 +3,7 @@ Host github.com-bharatOffice
      HostName github.com
      User git
      IdentityFile ~/.ssh/bharatOffice
-     
+ 
 #bharatPersonal account
 Host github.com-bharatPersonal
      HostName github.com
