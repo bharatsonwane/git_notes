@@ -190,7 +190,26 @@ Now for cloning the repo use the below command:
 
  <br>
 
- ## Finally
+
+## Step 6:- Change Remote URL for Cloned Repositories (Optional)
+
+If you have already cloned repositories using HTTPS, you can change the remote URL to use SSH for a smoother experience. First, navigate to the repository directory, then run the following commands to update the remote URL:
+
+```sh
+     git remote -v # To check current URLs
+     git remote remove origin # Remove existed URLs
+     git remote add origin git@{repoProvider.com}-{githubUsername}:{owner-user-name}/{the-repo-name}.git # Add SSH URL        
+```
+
+Pick the correct pair for your repository accordingly.
+To push or pull to the correct account we need to add the remote origin to the project
+```sh
+     git remote add origin git@github.com-bharatPersonal:bharatPersonal
+     
+     git remote add origin git@github.com-bharatOffice:bharatOffice
+```
+
+## Step 7:- Finally
 
 From now on, to ensure that our commits and pushes from each repository on the system uses the correct GitHub user — we will have to configure **user.email** and **user.name** in every repository freshly cloned or existing before.
 
@@ -203,29 +222,10 @@ To do this use the following commands.
      git config user.email "myPersonalEmail@gmail.com"
      git config user.name "Bharat Sonwane"
 ```
-Pick the correct pair for your repository accordingly.
-
-
-To push or pull to the correct account we need to add the remote origin to the project
-```sh
-     git remote add origin git@github.com-bharatPersonal:bharatPersonal
-     
-     git remote add origin git@github.com-bharatOffice:bharatOffice
-```
 
 Now you can use:
 ```sh
      git push
      
      git pull
-```
-
-## Step 6:- Change Remote URL for Cloned Repositories
-
-If you have already cloned repositories using HTTPS, you can change the remote URL to use SSH for a smoother experience. First, navigate to the repository directory, then run the following commands to update the remote URL:
-
-```sh
-     git remote -v # To check current URLs
-     git remote remove origin # Remove existed URLs
-     git remote add origin git@{repoProvider.com}-{githubUsername}:{owner-user-name}/{the-repo-name}.git # Add SSH URL        
 ```
