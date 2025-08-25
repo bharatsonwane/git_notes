@@ -42,29 +42,30 @@ list down file in  **.ssh** folder (mac/linux):
 
 Syntax for generating unique ssh key for an account with email & file name:
 ```sh
-      ssh-keygen -t rsa -C "yourEmailAddress" -f "githubUsername"
+      ssh-keygen -t rsa -C "yourEmailAddress" -f "repoProvider_githubUsername"
 ```
 here,
 
 **-C** stands for comment to help identify your ssh key
 
-**-f** stands for the file name where your ssh key get saved
+**-f** stands for the file name where your ssh key get saved (*repoProvider_githubUsername* is ssh-key-name.)
 
 
 #### Now generating SSH keys for my two accounts
 ```sh
-     ssh-keygen -t rsa -C "myOfficeEmail@gmail.com" -f "bharatOffice"
-     ssh-keygen -t rsa -C "myPersonalEmail@gmail.com" -f "bharatPersonal"
+     ssh-keygen -t rsa -C "myOfficeEmail@gmail.com" -f "bitbucket_bharatOffice"
+     ssh-keygen -t rsa -C "myPersonalEmail@gmail.com" -f "github_bharatPersonal"
 ```
 
-Notice here **bharatOffice** and **bharatPersonal** are the username of my github accounts corresponding to **myOfficeEmail<span></span>@gmail.com** and **myPersonalEmail<span></span>@gmail.com** email ids respectively.
+Here **bharatOffice** is username of bitbucket corresponding to  **myOfficeEmail** email and for that **bitbucket_bharatOffice** is file name.
+And **bharatPersonal** is username of github corresponding to  **myPersonalEmail** email and for that **github_bharatOffice** is file name.
 
 After entering the command the terminal will ask for passphrase, leave it empty and proceed.
 
 
 > Now after adding keys , in your .ssh folder, a public key and a private will get generated.
 
->The public key will have an extension __.pub__ and private key will be there without any extension both having same name which you have passed after __-f__ option in the above command. (in my case __bharatOffice__ and __bharatPersonal__)
+>The public key will have an extension __.pub__ and private key will be there without any extension both having same name which you have passed after __-f__ option in the above command. (in my case *bitbucket_bharatOffice* and *github_bharatPersonal*)
 
 
 <br>
@@ -87,22 +88,22 @@ The commands below opens config in your default editor....Likely TextEdit, VS Co
 Now we need to add these lines to the file, each block corresponding to each account we created earlier.
 ```sh
      #syntax ==> 
-     Host github.com-githubUsername
-          HostName github.com
+     Host repoProvider.com-githubUsername
+          HostName repoProvider.com
           User git
-          IdentityFile ~/.ssh/githubUsername
+          IdentityFile ~/.ssh/repoProvider_githubUsername
 
      #bharatOffice account
-     Host github.com-bharatOffice
-          HostName github.com
+     Host bitbucket.org-bharatOffice
+          HostName bitbucket.org
           User git
-          IdentityFile ~/.ssh/bharatOffice
+          IdentityFile ~/.ssh/bitbucket_bharatOffice
 
      #bharatPersonal account
      Host github.com-bharatPersonal
           HostName github.com
           User git
-          IdentityFile ~/.ssh/bharatPersonal
+          IdentityFile ~/.ssh/github_bharatPersonal
 ```
 
 <br>
@@ -124,10 +125,10 @@ Optional: First-time trust host:
 Now we have the keys but it cannot be used until we add them to the SSH Agent.
 ```sh
      #syntax
-     ssh-add -K ~/.ssh/githubUsername
+     ssh-add -K ~/.ssh/repoProvider_githubUsername
      #e.g.
-     ssh-add -K ~/.ssh/bharatOffice
-     ssh-add -K ~/.ssh/bharatPersonal
+     ssh-add -K ~/.ssh/bitbucket_bharatOffice
+     ssh-add -K ~/.ssh/github_bharatPersonal
 ```
 
 You can read more about adding keys to SSH Agent [here.](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
@@ -143,8 +144,8 @@ __1. Copy the public key__
 
      We can copy the public key either by opening the githubUsername.pub file in vim and then copying the content of it.
 ```sh
-     vim ~/.ssh/bharatOffice.pub
-     vim ~/.ssh/bharatPersonal.pub
+     vim ~/.ssh/bitbucket_bharatOffice.pub
+     vim ~/.ssh/github_bharatPersonal.pub
 ```
 
 <p align="center">OR
@@ -152,8 +153,8 @@ __1. Copy the public key__
 We can directly copy the content of the public key file in the clipboard.
 
 ```sh
-     pbcopy < ~/.ssh/bharatOffice.pub
-     pbcopy < ~/.ssh/bharatPersonal.pub
+     pbcopy < ~/.ssh/bitbucket_bharatOffice.pub
+     pbcopy < ~/.ssh/github_bharatPersonal.pub
 ```   
 
 
@@ -182,7 +183,7 @@ For Example:
 I am making a repository on my personal github account and naming it **TestRepo**
 Now for cloning the repo use the below command:
  ```sh
-     git clone git@github.com-{githubUsername}:{owner-user-name}/{the-repo-name}.git
+     git clone git@{repoProvider.com}-{githubUsername}:{owner-user-name}/{the-repo-name}.git
 
      [e.g.] git clone git@github.com-bharatPersonal:bharatPersonal/TestRepo.git
  ```
@@ -226,5 +227,5 @@ If you have already cloned repositories using HTTPS, you can change the remote U
 ```sh
      git remote -v # To check current URLs
      git remote remove origin # Remove existed URLs
-     git remote add origin git@github.com-{githubUsername}:{owner-user-name}/{the-repo-name}.git # Add SSH URL        
+     git remote add origin git@{repoProvider.com}-{githubUsername}:{owner-user-name}/{the-repo-name}.git # Add SSH URL        
 ```
